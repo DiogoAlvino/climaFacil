@@ -6,15 +6,18 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primaryYellow,
     paddingHorizontal: 66,
     borderRadius: 50,
-    height: 72,
-    width: 298,
+    height: 60,
+    width: "60%",
     alignItems: 'center',
     justifyContent: 'center',
   },
   buttonText: {
     color: colors.primaryPurple,
-    fontSize: 35,
+    fontSize: 23,
     textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%'
   },
 });
 

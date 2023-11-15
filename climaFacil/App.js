@@ -1,21 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import MainButton from './components/MainButton';
-import searchWeather from './services/weather';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Welcome from './screens/Welcome';
+import Search from './screens/Search';
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <MainButton title="INICIAR" onPress={() => searchWeather('Maraba')} />
-    </View>
-  );
+	return (
+		<NavigationContainer>
+			<Stack.Navigator>
+				<Stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }} />
+				<Stack.Screen name="Search" component={Search} options={{ headerShown: false }} />
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
