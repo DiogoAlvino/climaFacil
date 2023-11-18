@@ -2,10 +2,10 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import styles from './style';
 
-const Temperature = ({temperature}) => {
+const Temperature = ({temp}) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>{temperature}°</Text>
+            <Text style={styles.text}>{temp}°</Text>
         </View>
     );
 }

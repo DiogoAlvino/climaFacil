@@ -5,6 +5,7 @@ import colors from '../constants/colors';
 import { useNavigation } from '@react-navigation/native';
 import SearchBar from '../components/SearchBar';
 import MainButton from '../components/MainButton';
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Search() {
     const navigation = useNavigation();
@@ -18,26 +19,27 @@ export default function Search() {
     };
 
     return (
-        <View style={styles.container}>
-            <View style={styles.utils}>
-                <SearchBar onSearch={handleSearch} />
-                <MainButton title="BUSCAR" onPress={handleFindPress}/>
+        <LinearGradient colors={[colors.linearPrimary[0], colors.linearPrimary[1], colors.linearPrimary[2]]} style={styles.container} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
+            <View style={styles.container}>
+                <View style={styles.utils}>
+                    <SearchBar onSearch={handleSearch} />
+                    <MainButton title="BUSCAR" onPress={handleFindPress}/>
+                </View>
+                <View style={styles.logo}>
+                    <Image
+                        style={styles.image}
+                        source={require('../assets/logo2.png')}
+                        resizeMode="contain"
+                    />
+                </View>
             </View>
-            <View style={styles.logo}>
-                <Image
-                    style={styles.image}
-                    source={require('../assets/logo2.png')}
-                    resizeMode="contain"
-                />
-            </View>
-        </View>
+        </LinearGradient>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.linearPrimary[0],
         alignItems: 'center',
         justifyContent: 'center',
     },
