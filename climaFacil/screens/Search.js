@@ -10,11 +10,11 @@ export default function Search() {
     const navigation = useNavigation();
 
     const handleSearch = (text) => {
-        console.log('Texto da pesquisa:', text);
+        console.log('o que está sendo digitado >> ', text);
     };
 
     const handleFindPress = () => {
-        navigation.navigate("Welcome");
+        navigation.navigate("Weather");
     };
 
     return (
