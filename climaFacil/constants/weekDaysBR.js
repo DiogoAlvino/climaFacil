@@ -1,4 +1,4 @@
-const weekToBR = {
+const weekDaysBR = {
     "Monday"    : "Segunda-feira",
     "Tuesday"   : "Terça-feira",
     "Wednesday" : "Quarta-feira",
@@ -8,4 +8,4 @@ const weekToBR = {
     "Sunday"    : "Domingo"
 }
 
-export default weekToBR;
+export default weekDaysBR;

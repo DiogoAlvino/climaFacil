@@ -13,7 +13,6 @@ const LocationInfo = ({city, dayWeek, date, month, hour}) => {
             <View style={styles.dataInfo}>
                 <Text style={styles.subText}>{dayWeek}</Text>
                 <Text style={styles.subText}>{date}</Text>
-                <Text style={styles.subText}>{month}</Text>
                 <Text style={styles.subText}>{hour}</Text>
             </View>
         </View>

@@ -1,6 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { searchHour, searchWeather } from '../services/weatherHour';
+import { StyleSheet, View} from 'react-native';
 import colors from '../constants/colors';
 import { useNavigation } from '@react-navigation/native';
 import LocationInfo from '../components/LocationInfo';
@@ -8,13 +6,12 @@ import Temperature from '../components/Temperature';
 import WeatherInfo from '../components/WeatherInfo';
 import MainButton from '../components/MainButton';
 import { LinearGradient } from "expo-linear-gradient";
+import weekDaysBR from '../constants/weekDaysBR';
+import { convertDateISOtoBR, formatHours } from '../utils/libFunctions';
 
-export default function Weather() {
+export default function Weather({route}) {
+    const { weatherData, hourData } = route.params;
     const navigation = useNavigation();
-
-    const handleSearch = (text) => {
-        console.log('teste');
-    };
 
     const handleBackPress = () => {
         navigation.navigate("Welcome");
@@ -23,9 +20,9 @@ export default function Weather() {
     return (
         <LinearGradient colors={[colors.linearPrimary[0], colors.linearPrimary[1], colors.linearPrimary[2]]} style={styles.container} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
             <View style={styles.container}>
-                <LocationInfo city="Brasilia" dayWeek="Sábado" date="18" month="11" hour="04:15"/>
-                <Temperature temp="32"/>
-                <WeatherInfo humidity="15" rain="30" thermal="35"/>
+                <LocationInfo city={weatherData.name} dayWeek={weekDaysBR[hourData.day_of_week]} date={convertDateISOtoBR(hourData.date)} hour={formatHours(hourData.datetime)}/>
+                <Temperature temp={Math.round(weatherData.main.temp)}/>
+                <WeatherInfo humidity={weatherData.main.humidity} wind={weatherData.wind.speed} thermal={weatherData.main.feels_like}/>
                 <MainButton title="VOLTAR" onPress={handleBackPress}/>
             </View>
         </LinearGradient>

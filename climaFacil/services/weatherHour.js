@@ -13,9 +13,9 @@ export async function searchWeather(city){
 
         const data = await response.json();
 
-        console.log(data);
+        return data;
     }catch(err){
-        console.log(err);
+        throw err;
     }
 }
 
@@ -38,9 +38,9 @@ export async function searchHour(city){
 
         const data = await response.json();
 
-        console.log(data);
+        return data;
     }catch(err){
-        console.log(err);
+        throw err;
     }
 
 }
