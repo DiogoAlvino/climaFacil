@@ -37,8 +37,8 @@ export default function Search() {
         } catch(err) {
             setTimeout(() => {
                 setLoading(false);
-            }, 4000);
-            alert()
+            }, 2000);
+            alert("Erro ao buscar cidade.")
         }
     };
 
@@ -47,7 +47,7 @@ export default function Search() {
     };
 
     return (
-        <LinearGradient colors={[colors.linearPrimary[0], colors.linearPrimary[1], colors.linearPrimary[2]]} style={styles.container} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
+        <LinearGradient colors={[colors.linearPrimary[2], colors.linearPrimary[1], colors.linearPrimary[0]]} style={styles.container} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
             {loading ? (<Loading/>) : (
                 <View style={styles.container}>
                     <View style={styles.utils}>

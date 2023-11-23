@@ -12,8 +12,13 @@ export default function Welcome() {
     };
 
     return (
-        <LinearGradient colors={[colors.linearPrimary[0], colors.linearPrimary[1], colors.linearPrimary[2]]} style={styles.container} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
+        <LinearGradient colors={[colors.linearPrimary[2], colors.linearPrimary[1], colors.linearPrimary[0]]} style={styles.container} start={{ x: 0, y: 0 }} end={{ x: 0, y: 1 }}>
             <View style={styles.container}>
+                <Image
+                    style={styles.imageMain}
+                    source={require('../assets/adaptive-icon.png')}
+                    resizeMode="contain"
+                />
                 <Image
                     style={styles.image}
                     source={require('../assets/logo.png')}
@@ -32,10 +37,14 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        gap: 40,
+        gap: 20,
     },
     buttonContainer: {
         alignItems: 'center',
+    },
+    imageMain: {
+        width: 300,
+        height: 300,
     },
     image: {
         width: 200,

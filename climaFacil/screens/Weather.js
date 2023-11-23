@@ -18,7 +18,7 @@ export default function Weather({route}) {
     };
 
     return (
-        <LinearGradient colors={[colors.linearPrimary[0], colors.linearPrimary[1], colors.linearPrimary[2]]} style={styles.container} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
+        <LinearGradient colors={[colors.linearPrimary[2], colors.linearPrimary[1], colors.linearPrimary[0]]} style={styles.container} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
             <View style={styles.container}>
                 <LocationInfo city={weatherData.name} dayWeek={weekDaysBR[hourData.day_of_week]} date={convertDateISOtoBR(hourData.date)} hour={formatHours(hourData.datetime)}/>
                 <Temperature temp={Math.round(weatherData.main.temp)}/>
